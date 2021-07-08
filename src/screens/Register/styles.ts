@@ -20,7 +20,8 @@ export const Header = styled.View`
 export const Title = styled.Text`
     font-family: ${({ theme }) => theme.fonts.regular};
     color: ${({ theme }) => theme.colors.shape};
-    font-size: ${RFValue(18)}px;;
+    font-size: ${RFValue(18)}px;
+    justify-content: flex-end;
 `;
 
 export const Form = styled.View`
@@ -33,4 +34,12 @@ export const Form = styled.View`
 
 export const Fields = styled.View`
 
+`;
+
+export const TransactionsTypes = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 8px;
+    margin-bottom: 16px;
 `;
