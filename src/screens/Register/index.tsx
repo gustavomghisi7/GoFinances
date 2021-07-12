@@ -96,17 +96,18 @@ export function Register(){
 
         try {
             const dataKey = '@gofinances:transactions';
-
+            
             const data = await AsyncStorage.getItem(dataKey);
             const currentData = data ? JSON.parse(data) : [];
 
             const dataFormatted = [
                 ...currentData,
                 newTransaction
-            ]
+            ];
 
             await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormatted));
 
+            
             reset();
             setTransactionType('');
             setCategory({
@@ -115,7 +116,7 @@ export function Register(){
             });
 
             navigation.navigate('Listagem');
-
+            
         } catch (error) {
             console.log(error);
             Alert.alert("Não foi possível salvar");
